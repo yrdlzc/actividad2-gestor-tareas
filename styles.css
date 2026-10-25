@@ -1,0 +1,256 @@
+/*
+==================================================
+ACTIVIDAD 2 - DESARROLLO FULL STACK
+GESTOR DE TAREAS
+==================================================
+*/
+
+/* Reinicio básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables de color */
+:root {
+    --color-primario: #2563eb;
+    --color-primario-hover: #1d4ed8;
+    --color-exito: #16a34a;
+    --color-exito-hover: #15803d;
+    --color-advertencia: #f59e0b;
+    --color-advertencia-hover: #d97706;
+    --color-peligro: #dc2626;
+    --color-peligro-hover: #b91c1c;
+
+    --color-texto: #1f2937;
+    --color-secundario: #6b7280;
+    --color-fondo: #f3f4f6;
+    --color-blanco: #ffffff;
+    --color-borde: #d1d5db;
+}
+
+/* Estilo general */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--color-blanco);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Encabezado */
+.encabezado {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.encabezado h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--color-primario);
+}
+
+.descripcion {
+    color: var(--color-secundario);
+    line-height: 1.6;
+}
+
+/* Formulario */
+.seccion-formulario {
+    margin-bottom: 30px;
+}
+
+.grupo-formulario {
+    display: flex;
+    gap: 12px;
+}
+
+#nueva-tarea {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#nueva-tarea:focus {
+    border-color: var(--color-primario);
+}
+
+#agregar-tarea {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#agregar-tarea:hover {
+    background-color: var(--color-primario-hover);
+}
+
+/* Mensaje de error */
+#mensaje-error {
+    color: var(--color-peligro);
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+/* Sección tareas */
+.seccion-tareas h2 {
+    margin-bottom: 20px;
+}
+
+/* Lista */
+#lista-tareas {
+    list-style: none;
+}
+
+/* Tarjetas de tarea */
+.tarea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--color-blanco);
+
+    border: 1px solid var(--color-borde);
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-bottom: 12px;
+
+    transition: 0.3s ease;
+}
+
+.tarea:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Tareas completadas */
+.completada {
+    background-color: #ecfdf5;
+}
+
+.completada span {
+    text-decoration: line-through;
+    color: var(--color-secundario);
+}
+
+/* Contenido */
+.contenido-tarea {
+    flex: 1;
+}
+
+.contenido-tarea span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Grupo de botones */
+.grupo-botones {
+    display: flex;
+    gap: 8px;
+}
+
+/* Botones base */
+.grupo-botones button {
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: white;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+/* Completar */
+.btn-completar {
+    background-color: var(--color-exito);
+}
+
+.btn-completar:hover {
+    background-color: var(--color-exito-hover);
+}
+
+/* Editar */
+.btn-editar {
+    background-color: var(--color-advertencia);
+}
+
+.btn-editar:hover {
+    background-color: var(--color-advertencia-hover);
+}
+
+/* Eliminar */
+.btn-eliminar {
+    background-color: var(--color-peligro);
+}
+
+.btn-eliminar:hover {
+    background-color: var(--color-peligro-hover);
+}
+
+/* Responsive tablet */
+@media (max-width: 768px) {
+
+    .container {
+        padding: 25px;
+    }
+
+    .tarea {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .grupo-botones {
+        width: 100%;
+    }
+
+    .grupo-botones button {
+        flex: 1;
+    }
+}
+
+/* Responsive móvil */
+@media (max-width: 480px) {
+
+    .encabezado h1 {
+        font-size: 1.8rem;
+    }
+
+    .grupo-formulario {
+        flex-direction: column;
+    }
+
+    #agregar-tarea {
+        width: 100%;
+    }
+
+    .grupo-botones {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .grupo-botones button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Aplicación de gestión de tareas desarrollada con HTML, CSS y JavaScript ES6+.">
+
+    <title>Gestor de Tareas</title>
+
+    <link
+        rel="stylesheet"
+        href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- Contenedor principal -->
+    <main class="container">
+
+        <!-- Encabezado -->
+        <header class="encabezado">
+
+            <h1>Gestor de Tareas</h1>
+
+            <p class="descripcion">
+                Aplicación desarrollada para la administración y seguimiento de tareas utilizando JavaScript ES6+, Programación Orientada a Objetos y manipulación dinámica del DOM.
+            </p>
+
+        </header>
+
+        <!-- Formulario de captura -->
+        <section class="seccion-formulario">
+
+            <div class="grupo-formulario">
+
+                <input
+                    type="text"
+                    id="nueva-tarea"
+                    name="nueva-tarea"
+                    placeholder="Ingrese una nueva tarea"
+                    autocomplete="off">
+
+                <button
+                    id="agregar-tarea"
+                    type="button">
+                    Agregar tarea
+                </button>
+
+            </div>
+
+            <p id="mensaje-error"></p>
+
+        </section>
+
+        <!-- Lista de tareas -->
+        <section class="seccion-tareas">
+
+            <h2>Listado de tareas</h2>
+
+            <ul id="lista-tareas"></ul>
+
+        </section>
+
+    </main>
+
+    <!-- Archivo JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
